@@ -3,3 +3,16 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.cell {
+  height: 5px;
+  width: 5px;
+}
+
+.alive {
+  background: green;
+}
+
+.dead {
+  background: white;
+}

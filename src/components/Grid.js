@@ -1,9 +1,25 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Cell from './Cell';
 
 class Grid extends Component {
   render() {
-    return;
+    let gridRows = this.props.rows.map((row, i) => {
+      let gridRow = row.map((cell, j) => {
+        return <Cell key={j} alive={cell.alive} />
+      });
+
+      return (
+        <tr key={i}>{gridRow}</tr>
+      );
+    });
+
+    return (
+      <table>
+        <tbody>
+          {gridRows}
+        </tbody>
+      </table>
+    );
   }
 }
 
