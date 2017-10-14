@@ -6,8 +6,15 @@ class Cell extends Component {
     return this.props.alive !== nextProps.alive;
   }
 
+  aliveClass() {
+    const numColors = 3;
+    const aliveNum = Math.floor(numColors*Math.random());
+    return `alive${aliveNum}`;
+  }
+
   render() {
-    const className = this.props.alive ? 'cell alive' : 'cell dead';
+    const isAlive = this.props.alive;
+    const className = isAlive ? `cell ${this.aliveClass()}` : 'cell dead';
     return (
       <td className={className}></td>
     );

@@ -1,7 +1,7 @@
 import generateCells from './reducer-utilities';
 import nextGeneration from './next-generation';
 
-const NUM_ROWS = 20;
+const NUM_ROWS = 30;
 const NUM_COLS = 60;
 
 const initialState = {
