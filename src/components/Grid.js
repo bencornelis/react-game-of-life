@@ -14,7 +14,7 @@ class Grid extends Component {
     });
 
     return (
-      <table>
+      <table className='grid'>
         <tbody>
           {gridRows}
         </tbody>

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function Header(props) {
   return (
-    <h1>Generation {props.generation}</h1>
+    <h1 className='header'>Generation {props.generation}</h1>
   );
 }
 
