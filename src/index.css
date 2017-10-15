@@ -17,21 +17,41 @@ body {
   border-radius: 5px;
 }
 
+.header-water {
+  background: #61dafb;
+}
+
+.header-fire {
+  background: #EB891A;
+}
+
 .cell {
   height: 10px;
   width: 10px;
 }
 
-.alive0 {
+.alive-water-0 {
   background: rgb(42, 124, 255);
 }
 
-.alive1 {
+.alive-water-1 {
   background: #61dafb;
 }
 
-.alive2 {
+.alive-water-2 {
   background: rgb(107, 102, 247);
+}
+
+.alive-fire-0 {
+  background: #EB891A;
+}
+
+.alive-fire-1 {
+  background: #ba4700;
+}
+
+.alive-fire-2 {
+  background: #ffd9af;
 }
 
 .dead {
@@ -53,7 +73,6 @@ body {
   margin-bottom: 10px;
   padding: 5px 10px;
   border: none;
-  background: #61dafb;
   width: 115px;
   border-radius: 3px;
 }
@@ -66,4 +85,12 @@ body {
 .control-panel-button:focus {
   outline:0;
   background: white;
+}
+
+.button-water {
+  background: #61dafb;
+}
+
+.button-fire {
+  background: #EB891A;
 }

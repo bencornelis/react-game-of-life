@@ -7,10 +7,11 @@ import { connect } from 'react-redux';
 class Game extends Component {
   constructor(props) {
     super(props);
-    this.startGame = this.startGame.bind(this);
-    this.pauseGame = this.pauseGame.bind(this);
-    this.clearGame = this.clearGame.bind(this);
-    this.newGame   = this.newGame.bind(this);
+    this.startGame     = this.startGame.bind(this);
+    this.pauseGame     = this.pauseGame.bind(this);
+    this.clearGame     = this.clearGame.bind(this);
+    this.newGame       = this.newGame.bind(this);
+    this.changeElement = this.changeElement.bind(this);
   }
 
   nextGeneration() {
@@ -33,17 +34,31 @@ class Game extends Component {
     this.props.dispatch({ type: 'RESTART' });
   }
 
+  changeElement(newElement) {
+    this.props.dispatch({
+      type: 'CHANGE_ELEMENT',
+      newElement: newElement
+    });
+  }
+
   render() {
+    const element = this.props.element;
     return (
       <div>
-        <Header generation={this.props.generation} />
+        <Header
+          generation={this.props.generation}
+          element={element} />
         <div>
-          <Grid rows={this.props.rows} />
+          <Grid
+            rows={this.props.rows}
+            element={element} />
           <ControlPanel
             handleStartClick={this.startGame}
             handlePauseClick={this.pauseGame}
             handleClearClick={this.clearGame}
-            handleNewGridClick={this.newGame}/>
+            handleNewGridClick={this.newGame}
+            handleElementClick={this.changeElement}
+            element={element}/>
         </div>
       </div>
     );
