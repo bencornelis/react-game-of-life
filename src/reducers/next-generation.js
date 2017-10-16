@@ -14,6 +14,25 @@ const getNeighbors = (x, y, grid) => {
   return neighbors;
 }
 
+const createNewCell = (oldCell, numAliveNeighbors) => {
+  let newCell;
+  if (oldCell.alive) {
+    if (numAliveNeighbors < 2 || numAliveNeighbors > 3) {
+      newCell = { alive: false };
+    } else {
+      newCell = oldCell
+    }
+  } else {
+    if (numAliveNeighbors === 3) {
+      newCell = { alive: true };
+    } else {
+      newCell = oldCell;
+    }
+  }
+
+  return newCell;
+}
+
 const nextGeneration = prevGen => {
   let numRows = prevGen.length;
   let numCols = prevGen[0].length;
@@ -23,25 +42,10 @@ const nextGeneration = prevGen => {
     let row = [];
     for (let x = 0; x < numCols; x++) {
       let neighbors = getNeighbors(x, y, prevGen);
-      let numAlive  = neighbors.filter(cell => cell.alive).length;
+      let numAliveNeighbors  = neighbors.filter(cell => cell.alive).length;
 
       let oldCell = prevGen[y][x];
-      let newCell;
-
-      if (oldCell.alive) {
-        if (numAlive < 2 || numAlive > 3) {
-          newCell = { alive: false };
-        } else {
-          newCell = oldCell
-        }
-      } else {
-        if (numAlive === 3) {
-          newCell = { alive: true };
-        } else {
-          newCell = oldCell;
-        }
-      }
-      row.push(newCell)
+      row.push(createNewCell(oldCell, numAliveNeighbors));
     }
     nextGen.push(row);
   }
