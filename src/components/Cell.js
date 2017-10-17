@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import constants from './../constants';
+const { colorSchemes } = constants;
 
 class Cell extends Component {
   constructor(props) {
@@ -8,15 +10,24 @@ class Cell extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.props.alive !== nextProps.alive ||
-           this.props.element !== nextProps.element;
+    return this.props.alive       !== nextProps.alive       ||
+           this.props.element     !== nextProps.element     ||
+           this.props.colorScheme !== nextProps.colorScheme ||
+           this.props.dimension   !== nextProps.dimension;
   }
 
   aliveClass() {
-    const numColors = 3;
-    const aliveNum = Math.floor(numColors*Math.random());
     const element = this.props.element.toLowerCase();
-    return `alive-${element}-${aliveNum}`;
+    let classNum;
+
+    if (this.props.colorScheme === colorSchemes.SINGLE) {
+      classNum = 0;
+    } else {
+      const numColors = 3;
+      classNum = Math.floor(numColors * Math.random());
+    }
+
+    return `alive-${element}-${classNum}`;
   }
 
   render() {
@@ -29,7 +40,9 @@ class Cell extends Component {
 }
 
 Cell.propTypes = {
-  alive: PropTypes.bool.isRequired
+  alive: PropTypes.bool.isRequired,
+  element: PropTypes.string.isRequired,
+  colorScheme: PropTypes.string.isRequired,
 }
 
 export default Cell;

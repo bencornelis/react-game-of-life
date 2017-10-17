@@ -1,4 +1,5 @@
-const generateCells = (numRows, numCols, aliveProbability=0.20) => {
+const generateCells = (dimensions, aliveProbability=0.20) => {
+  const { numRows, numCols } = dimensions;
   let cells = [];
   for (let y=0; y < numRows; y++) {
     let row = [];

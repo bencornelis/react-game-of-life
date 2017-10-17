@@ -3,6 +3,8 @@ import Header from './Header';
 import Grid from './Grid';
 import ControlPanel from './ControlPanel';
 import { connect } from 'react-redux';
+import constants from './../constants';
+const { types } = constants;
 
 class Game extends Component {
   constructor(props) {
@@ -12,10 +14,11 @@ class Game extends Component {
     this.clearGame     = this.clearGame.bind(this);
     this.newGame       = this.newGame.bind(this);
     this.changeElement = this.changeElement.bind(this);
+    this.changeScheme  = this.changeScheme.bind(this);
   }
 
   nextGeneration() {
-    this.props.dispatch({ type: 'NEXT_GEN' });
+    this.props.dispatch({ type: types.NEXT_GEN });
   }
 
   startGame() {
@@ -27,22 +30,30 @@ class Game extends Component {
   }
 
   clearGame() {
-    this.props.dispatch({ type: 'CLEAR' });
+    this.props.dispatch({ type: types.CLEAR });
   }
 
   newGame() {
-    this.props.dispatch({ type: 'RESTART' });
+    this.props.dispatch({ type: types.RESTART });
   }
 
   changeElement(newElement) {
     this.props.dispatch({
-      type: 'CHANGE_ELEMENT',
-      newElement: newElement
+      type: types.CHANGE_ELEMENT,
+      newElement
     });
+  }
+
+  changeScheme(newColorScheme) {
+    this.props.dispatch({
+      type: types.CHANGE_COLOR_SCHEME,
+      newColorScheme
+    })
   }
 
   render() {
     const element = this.props.element;
+    const colorScheme = this.props.colorScheme;
     return (
       <div>
         <Header
@@ -51,14 +62,17 @@ class Game extends Component {
         <div>
           <Grid
             rows={this.props.rows}
-            element={element} />
+            element={element}
+            colorScheme={colorScheme}/>
           <ControlPanel
             handleStartClick={this.startGame}
             handlePauseClick={this.pauseGame}
             handleClearClick={this.clearGame}
             handleNewGridClick={this.newGame}
             handleElementClick={this.changeElement}
-            element={element}/>
+            handleColorSchemeClick={this.changeScheme}
+            element={element}
+            colorScheme={colorScheme}/>
         </div>
       </div>
     );

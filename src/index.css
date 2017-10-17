@@ -26,15 +26,15 @@ body {
 }
 
 .cell {
-  height: 3px;
-  width: 3px;
-}
-
-.alive-water-0 {
-  background: rgb(42, 124, 255);
+  height: 5px;
+  width: 5px;
 }
 
 .alive-water-1 {
+  background: rgb(42, 124, 255);
+}
+
+.alive-water-0 {
   background: #61dafb;
 }
 

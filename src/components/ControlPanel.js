@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import constants from './../constants';
+const { elements, colorSchemes } = constants;
 
 function ControlPanel(props) {
   const elementClass  = `button-${props.element.toLowerCase()}`;
@@ -22,13 +24,23 @@ function ControlPanel(props) {
       <br />
       <button
         className={buttonClasses}
-        onClick={() => props.handleElementClick('WATER')}>
+        onClick={() => props.handleElementClick(elements.WATER)}>
         Water
       </button>
       <button
         className={buttonClasses}
-        onClick={() => props.handleElementClick('FIRE')}>
+        onClick={() => props.handleElementClick(elements.FIRE)}>
         Fire
+      </button>
+      <button
+        className={buttonClasses}
+        onClick={() => props.handleColorSchemeClick(colorSchemes.SINGLE)}>
+        Single
+      </button>
+      <button
+        className={buttonClasses}
+        onClick={() => props.handleColorSchemeClick(colorSchemes.MULTI)}>
+        Multi
       </button>
     </div>
   )
@@ -40,6 +52,7 @@ ControlPanel.propTypes = {
   handleClearClick: PropTypes.func.isRequired,
   handleNewGridClick: PropTypes.func.isRequired,
   handleElementClick: PropTypes.func.isRequired,
+  handleColorSchemeClick: PropTypes.func.isRequired,
   element: PropTypes.string.isRequired
 }
 

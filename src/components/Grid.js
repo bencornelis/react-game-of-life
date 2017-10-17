@@ -8,7 +8,8 @@ class Grid extends Component {
         return <Cell
                   key={j}
                   alive={cell.alive}
-                  element={this.props.element} />
+                  element={this.props.element}
+                  colorScheme={this.props.colorScheme} />
       });
 
       return (
