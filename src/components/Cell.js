@@ -10,10 +10,9 @@ class Cell extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.props.alive       !== nextProps.alive       ||
-           this.props.element     !== nextProps.element     ||
-           this.props.colorScheme !== nextProps.colorScheme ||
-           this.props.dimension   !== nextProps.dimension;
+    return this.props.alive       !== nextProps.alive   ||
+           this.props.element     !== nextProps.element ||
+           this.props.colorScheme !== nextProps.colorScheme;
   }
 
   aliveClass() {
