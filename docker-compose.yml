@@ -1,0 +1,17 @@
+version: '3'
+networks:
+  main: {}
+
+services:
+  client:
+    build: .
+    volumes:
+      - ./src:/app/src
+    networks:
+      - main
+    ports:
+      - 3000:3000
+    entrypoint:
+      - npm
+      - run
+      - start
