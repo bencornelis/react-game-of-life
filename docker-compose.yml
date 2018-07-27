@@ -5,6 +5,7 @@ networks:
 services:
   client:
     build: .
+    image: client
     volumes:
       - ./src:/app/src
     networks:
