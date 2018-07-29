@@ -1,25 +1,28 @@
 language: node_js
 node_js:
-  - "node"
+- node
 env:
   global:
   - secure: exGXNqedTvpYe0wsUIlYGjgf1IX4L65vKFDge2vz1ybUIVqChw5u27N01xKvYLzj9ordes93gU/B7ighySUqAv+cTNJhANLM2VzcjgZbRxni9eAV6Z18lmXwfR81zr8nEgmNGcgeVDgVdgDY/OnVlChVuywtGFzludbpK1nqsSKNnk0qQ59oSkRfnW0S0Ea7fxrk4FVRhekD3nrjNJDpNNTspNC896jNTulCHiFkl0UY73SEc4VB0PgP5UV1gsu84XpLBPE/6hD/dn/KWwBeoDqW+NhWa3cFVR0CgjaVxdp/S7qk7/jjKocvuNOPYMk4qaDZJ9TRyiX4RKKRM4eEhmxYSMAuDkOKHsTDU4krxPS5P6WIKYAvalN69t1VRCWRJPumqoLehYbhCNlXLBehuYJ4H+QVJTYZVaiU5RSUVxj/owR5bl60esSMtFtuluW2jzoT2iKZmiM5UQ74pkoa1MRbD/Vxc6zmK+K3VPenu6gPlGYiv7LfHZiDXE8L86p2jOQDLBXZltqrmMDxIsthTBkvR+baATpB+YgdhxjVHN8AlODXBIXfbhsLGsx3zITXav+vKLjOPfKamQrHEEZz7G8hsrdPG2+JZfej/wviJrtdlWvfBMM6aXp1l28hbSEa2jIqULqMez98Fv54pdxL8XDNzlTp0ac1rTypnDqXEOA=
   - secure: KvgHgThJNx7OIrCYaqKwucRX3fgvPxm6+ktZlF4XNq3qm0B0Hh/TO546IQJk3b5Ki/3h40cPisW4/OgsLv1pvYAK6WfGPFCrhOsvyhH1pM7Z14CWACrzeXkND0qY0+vTr+MTOoOx4Pp5Dbm7GaBZ8S1SlEHNLNXsSYQzwDIozHUAQc0F2gYnaHF+NLApqfiWRZR0tYHIIMcp+xzcVeZJNkMqEIUVdGEBSVpabJavd+znPegOoaZHnwcjXJnTOkojmBxxeEg9Qvn9JBrIwqMXdEmP855x3K7c67nKy3mMvFH5Y5V/wr/IcmJLTxaj3w46yyQyBVLip6sU1xtCFfa6YdbmTQny6exjFhJ5xH0YVrBcIA23mVdUYR50NANFcd4bbmrVp+52KttaODPinoZkyCvgeC/RpyjZrCINLd9qLgsh4GUePesPj01pTNMZ1Cmf9uaftHqxWs8crk17wQvcz0rIq+zjefPOCbISK5Jl8uYytKFdIYRny6HGSmL8swXqqQ7MWOPRO3FVjaZ6hMP+dlQYT4UloL+nQQjxpi6LA8STjpgkuwUv7g1NwiLI0qo2aCEPn+yI1xru19tVP0APIWyxXGjQqI/MPtIWkkKtDQaka/GApYgvZ2Hqydc2CLnSUPxYpOgLhyxPlI7nuFHWBnxfc4zSsezon4fh5CBVmSQ=
+  - secure: bByUrfWTByrzEhWd5YD+t+NoE3F+olX4CfHsoBHfrOJGqyPeLz7fdXW23q8OaTgHIYD3aNN9YjZG+DF9iwBlFb977ubvTICLXCm22vpOLD5mEl/3XWj1aIQ5MMH0wijIVmO5+2DXHUBCrBJ0hYhYnw34RhMaGKmo+oDlGyGFRp21YLVme0RwcNM+cnwkUFukGtN6fgIDkGGonSNexyb++p4X56iyR6B/09pxGNePJMjtKynJJNobTlsFSl1m/hUlvECw0p6Bw/2ilx1TithwsZGWr/oh7mV9S1dOl0Luqt63p2tjUEJpR0rb8T+2ES4Bbp/hoDGCx+FgMyQ+htYMFgLcohb4n2ibxpxZTOOtsNygV0i1CDa+3D2+Sux9Cu05j2QEE0ujX8JbdXqEydAyzTwgG2jIPIJJEdxUSL31dOQxZWH//7a0efdwDuVPvXvyxnEMnUQoOg8YVx1ZfSYyg8vqqpjHcseyRf7L1jxTSGUrW01SnwBGqiQswUBFQbkvwqnuhAe886DtB4KfaPYzPcF/aZYmAIC8xiLuvEGzqE6Z2QBZDEoZztpYRIC8Fig5/bCssTZDPXQ/7GRTcp6piZ/AEWzrL7Pgn4MgVwQgCf3uF2PYJSI4dJGG0kE4gFiuFlH0krG5jRZ+H6OhW8SP4A9jzzneJ5BCaXwuq9z21Zw=
+  - secure: ktwtd4LRIArPx1Ajgj51RTKgny4KoDtYOE9zg1ph00mdxXTrivpjvGOgRZzGx9NvrxW9ACDnZ5vzBIRDq+9aTiMn2BMmW0g8cG910B2/J9qA/juwh0JoAHuPAz/Yl14tqlNbW7cXGAys+Fme98bkiKT4mhOZ2CuBwICgqF1ca8DYa153IPk5+6ebI3wBRmi23ht1TapY2ffB7qHrnagaMH5ZJdmm5j78WPY9lT5+/+6EFLUvspukMn76AWyjRnzs54263v02bE2swooNqJi5iAKFSaZ3X8JeZxofTlccoueV1dV2MykwvOso7JXq8NogxR/9eKbC1JySAQ6gfn3CSp6mnIke/hdlAZbCAj0yvfVNcCeFiu4kjdYWTAK7ahnkmDMwnQ1QwvZtPp+ThP5jR+n1/jPD7VRdBgZFHq6uDQgTxreMMAqiTl9coU0HiKq8BrfFHdmaWrQEoxjchTkHU+2kcLrTLbPF0FF6TUC4JtuLA53RqP/oZ0ly4K/CdM0O/guS3Tsuub9pXm2IKfW0Vb1LcGOizv/Q1VAogWITcnB7S8t/0CPPtQaCTmUf2wwu1m3E5Vp0Bp8Ls9gpH8WNTjz1/XJOpmedFKjuXt86xKwktGOxSl+t+4IDu5+LMrz9IQMqyHABsmlykaONMy15QWSW6YwrlDHJySQNt1+k5gU=
 jobs:
   include:
-    - stage: test
-      before_install:
-        - npm install
-      if: branch != master OR type != push
-      script:
-        - npm run build
-
-    - stage: deploy
-      before_install:
-        - pip install --user awscli
-        - npm install
-      if: branch = master AND type IN (push)
-      script:
-        - npm run build
-      after_success:
-        - npm run deploy
+  - stage: test
+    before_install:
+    - npm install
+    if: branch != master OR type != push
+    script:
+    - npm run build
+  - stage: deploy
+    before_install:
+    - pip install --user awscli
+    - npm install
+    if: branch = master AND type IN (push)
+    script:
+    - npm run build
+    after_success:
+    - npm run deploy
+    - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths
+      "/index.html"

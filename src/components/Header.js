@@ -5,7 +5,7 @@ function Header(props) {
   const elementClass = `header-${props.element.toLowerCase()}`;
   const headerClasses = `header ${elementClass}`;
   return (
-    <h1 className={headerClasses}>Generation {props.generation}</h1>
+    <h1 className={headerClasses}>Generation Num{props.generation}</h1>
   );
 }
 
