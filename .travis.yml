@@ -1,4 +1,4 @@
-sudo: required
+language: node_js
 env:
   global:
   - secure: exGXNqedTvpYe0wsUIlYGjgf1IX4L65vKFDge2vz1ybUIVqChw5u27N01xKvYLzj9ordes93gU/B7ighySUqAv+cTNJhANLM2VzcjgZbRxni9eAV6Z18lmXwfR81zr8nEgmNGcgeVDgVdgDY/OnVlChVuywtGFzludbpK1nqsSKNnk0qQ59oSkRfnW0S0Ea7fxrk4FVRhekD3nrjNJDpNNTspNC896jNTulCHiFkl0UY73SEc4VB0PgP5UV1gsu84XpLBPE/6hD/dn/KWwBeoDqW+NhWa3cFVR0CgjaVxdp/S7qk7/jjKocvuNOPYMk4qaDZJ9TRyiX4RKKRM4eEhmxYSMAuDkOKHsTDU4krxPS5P6WIKYAvalN69t1VRCWRJPumqoLehYbhCNlXLBehuYJ4H+QVJTYZVaiU5RSUVxj/owR5bl60esSMtFtuluW2jzoT2iKZmiM5UQ74pkoa1MRbD/Vxc6zmK+K3VPenu6gPlGYiv7LfHZiDXE8L86p2jOQDLBXZltqrmMDxIsthTBkvR+baATpB+YgdhxjVHN8AlODXBIXfbhsLGsx3zITXav+vKLjOPfKamQrHEEZz7G8hsrdPG2+JZfej/wviJrtdlWvfBMM6aXp1l28hbSEa2jIqULqMez98Fv54pdxL8XDNzlTp0ac1rTypnDqXEOA=
@@ -6,6 +6,8 @@ env:
 jobs:
   include:
     - stage: test
+      before_install:
+        - npm install
       if: branch != master OR type != push
       script:
         - npm run build
@@ -13,6 +15,7 @@ jobs:
     - stage: deploy
       before_install:
         - pip install --user awscli
+        - npm install
       if: branch = master AND type IN (push)
       script:
         - npm run build
