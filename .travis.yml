@@ -7,11 +7,16 @@ env:
   - secure: KvgHgThJNx7OIrCYaqKwucRX3fgvPxm6+ktZlF4XNq3qm0B0Hh/TO546IQJk3b5Ki/3h40cPisW4/OgsLv1pvYAK6WfGPFCrhOsvyhH1pM7Z14CWACrzeXkND0qY0+vTr+MTOoOx4Pp5Dbm7GaBZ8S1SlEHNLNXsSYQzwDIozHUAQc0F2gYnaHF+NLApqfiWRZR0tYHIIMcp+xzcVeZJNkMqEIUVdGEBSVpabJavd+znPegOoaZHnwcjXJnTOkojmBxxeEg9Qvn9JBrIwqMXdEmP855x3K7c67nKy3mMvFH5Y5V/wr/IcmJLTxaj3w46yyQyBVLip6sU1xtCFfa6YdbmTQny6exjFhJ5xH0YVrBcIA23mVdUYR50NANFcd4bbmrVp+52KttaODPinoZkyCvgeC/RpyjZrCINLd9qLgsh4GUePesPj01pTNMZ1Cmf9uaftHqxWs8crk17wQvcz0rIq+zjefPOCbISK5Jl8uYytKFdIYRny6HGSmL8swXqqQ7MWOPRO3FVjaZ6hMP+dlQYT4UloL+nQQjxpi6LA8STjpgkuwUv7g1NwiLI0qo2aCEPn+yI1xru19tVP0APIWyxXGjQqI/MPtIWkkKtDQaka/GApYgvZ2Hqydc2CLnSUPxYpOgLhyxPlI7nuFHWBnxfc4zSsezon4fh5CBVmSQ=
 jobs:
   include:
-  - stage: deploy
-    before_install:
-    - pip install --user awscli
-    if: branch = master AND type IN (push)
-    script:
-    - npm run build
-    after_success:
-    - npm run deploy
+    - stage: test
+      if: branch != master OR type != push
+      script:
+        - npm run build
+
+    - stage: deploy
+      before_install:
+        - pip install --user awscli
+      if: branch = master AND type IN (push)
+      script:
+        - npm run build
+      after_success:
+        - npm run deploy
